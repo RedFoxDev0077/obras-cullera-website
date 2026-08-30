@@ -5,12 +5,12 @@ const W = 1600, H = 1000;
 function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}}
 
 const PALETTES = {
-  copper : ['#120C07','#2A1A0E','#B87333','#E9C39C'],
-  slate  : ['#080A0D','#141C24','#3E6076','#A9C6D6'],
-  earth  : ['#0D0A08','#241A12','#8A5A2B','#DFC29B'],
-  forest : ['#070C0A','#0F2019','#2F6B52','#A9D6BE'],
-  dusk   : ['#0A0810','#1A1426','#6B4A7A','#D8BCE2'],
-  sand   : ['#100C06','#2B2113','#B08A3E','#F0DCAE']
+  copper : ['#160E07','#38240F','#D98A3C','#F6D9B6'],
+  slate  : ['#0A0E13','#1C2937','#5C8AAB','#CBE0EE'],
+  earth  : ['#130E09','#33251A','#B4783A','#F1D9B8'],
+  forest : ['#08110C','#173226','#3F9370','#C6E8D6'],
+  dusk   : ['#0C0913','#251C35','#8E66A3','#E8D4F0'],
+  sand   : ['#141004','#3C2F1B','#D6AC52','#F9ECC8']
 };
 
 function contours(rnd, cx, cy, n, base, step, color, opa){
@@ -135,7 +135,18 @@ function geometry(kind, rnd, p){
       x+=w+16+rnd()*26;
     }
   }
-  return g.join('');
+  return boost(g.join(''));
+}
+
+// The geometry was authored far too faint to read as an image; lift it.
+function boost(svg){
+  svg = svg.replace(/opacity="([0-9.]+)"/g, function(m, v){
+    return 'opacity="' + Math.min(0.95, parseFloat(v) * 1.95).toFixed(3) + '"';
+  });
+  svg = svg.replace(/stroke-width="([0-9.]+)"/g, function(m, v){
+    return 'stroke-width="' + (parseFloat(v) * 1.45).toFixed(2) + '"';
+  });
+  return svg;
 }
 
 function make(id, kind, palName, seed){
@@ -145,15 +156,15 @@ function make(id, kind, palName, seed){
   const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" preserveAspectRatio="xMidYMid slice">' +
   '<defs>' +
   '<linearGradient id="bg' + id + '" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="' + p[1] + '"/><stop offset="1" stop-color="' + p[0] + '"/></linearGradient>' +
-  '<radialGradient id="gl' + id + '" cx="' + (cx/W).toFixed(2) + '" cy="' + (cy/H).toFixed(2) + '" r="0.75"><stop offset="0" stop-color="' + p[2] + '" stop-opacity="0.55"/><stop offset="0.5" stop-color="' + p[2] + '" stop-opacity="0.14"/><stop offset="1" stop-color="' + p[2] + '" stop-opacity="0"/></radialGradient>' +
-  '<linearGradient id="vg' + id + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.42"/><stop offset="0.45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.62"/></linearGradient>' +
-  '<pattern id="gr' + id + '" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M46 0 L0 0 0 46" fill="none" stroke="' + p[3] + '" stroke-width="0.5" opacity="0.07"/></pattern>' +
+  '<radialGradient id="gl' + id + '" cx="' + (cx/W).toFixed(2) + '" cy="' + (cy/H).toFixed(2) + '" r="0.75"><stop offset="0" stop-color="' + p[2] + '" stop-opacity="0.92"/><stop offset="0.5" stop-color="' + p[2] + '" stop-opacity="0.30"/><stop offset="1" stop-color="' + p[2] + '" stop-opacity="0"/></radialGradient>' +
+  '<linearGradient id="vg' + id + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.22"/><stop offset="0.45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.48"/></linearGradient>' +
+  '<pattern id="gr' + id + '" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M46 0 L0 0 0 46" fill="none" stroke="' + p[3] + '" stroke-width="0.6" opacity="0.13"/></pattern>' +
   '<filter id="nz' + id + '"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="' + (seed%100) + '"/><feColorMatrix type="saturate" values="0"/></filter>' +
   '</defs>' +
   '<rect width="' + W + '" height="' + H + '" fill="url(#bg' + id + ')"/>' +
   '<rect width="' + W + '" height="' + H + '" fill="url(#gr' + id + ')"/>' +
   '<rect width="' + W + '" height="' + H + '" fill="url(#gl' + id + ')"/>' +
-  contours(rnd, cx, cy, 22, 60, 34, p[3], 0.30) +
+  contours(rnd, cx, cy, 24, 58, 33, p[3], 0.55) +
   geometry(kind, rnd, p) +
   '<rect width="' + W + '" height="' + H + '" fill="url(#vg' + id + ')"/>' +
   '<rect width="' + W + '" height="' + H + '" filter="url(#nz' + id + ')" opacity="0.055"/>' +
