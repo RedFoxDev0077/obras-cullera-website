@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 710" role="img" aria-label="Obras Cullera">
+  <defs>
+    <linearGradient id="oc" x1="0%" y1="10%" x2="100%" y2="90%">
+      <stop offset="0%"   stop-color="#8A4B22"/>
+      <stop offset="18%"  stop-color="#D79A6B"/>
+      <stop offset="34%"  stop-color="#F0D3B6"/>
+      <stop offset="52%"  stop-color="#B4713C"/>
+      <stop offset="70%"  stop-color="#EFCBA8"/>
+      <stop offset="86%"  stop-color="#A85E2B"/>
+      <stop offset="100%" stop-color="#7E441E"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#oc)" stroke-width="23" stroke-linecap="round">
+    <circle class="oc-o" cx="330" cy="355" r="252"/>
+    <path class="oc-c" d="M 1072.5 235.8 A 272 272 0 1 0 1072.5 474.2"/>
+  </g>
+</svg>
