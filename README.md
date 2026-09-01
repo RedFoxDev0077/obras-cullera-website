@@ -39,12 +39,16 @@ site/
     css/main.css        Complete design system
     js/main.js          All interaction (no libraries)
     js/i18n.js          Spanish + French dictionaries
-    img/*.svg           30 generated abstract sector images + brand mark
+    img/*.webp          30 optimised photographs (see 4) + logo-mark.svg
     logo/*.jpeg         The original logo files supplied by the client
 
 build/
   build.js              Regenerates the inner pages from index.html's header/footer
   bodies/*.html         Page bodies (edit these, then run `node build/build.js`)
+  optimise-images.js    images/*.png  ->  sized, compressed WebP
+  gen-art.js            Generator for the original placeholder SVG artwork (superseded)
+
+images/                 Source PNGs — working files, not committed
 ```
 
 ### Editing pages
@@ -72,19 +76,38 @@ To change a piece of copy, edit the English in the HTML **and** the matching key
 
 ## 4. Imagery
 
-There were no photographs available, so every image is a **generated SVG** —
-gradient meshes, topographic contours and sector-specific line geometry (bridges, cranes,
-turbines, solar arrays, dams, skylines, networks, terraces). They are vector, tiny,
-offline, and unique to this project.
+The site uses photographic imagery, delivered as **WebP**.
 
-They are designed to be swapped for photography with no code changes: each is referenced
-as an ordinary `<img src="assets/img/…">`. Replace the file (keeping the name, or updating
-the `src`) and the layout, masks and hover animations continue to work.
+Source files (large PNGs from the image generator) live in `images/` and are
+**not committed** — they are working files. The pipeline that produces what ships:
 
-To regenerate or add variants, the generator used is a small Node script; the
-palettes and geometry types are at the top of it (`copper`, `slate`, `earth`, `forest`,
-`dusk`, `sand` × `bridge`, `towers`, `turbines`, `cranes`, `road`, `solar`, `dam`,
-`terraces`, `network`, `skyline`).
+```bash
+npm install sharp            # dev-only; the site itself has no dependencies
+node build/optimise-images.js
+```
+
+That reads `images/*.png` and writes sized, compressed WebP into
+`site/assets/img/`. Three tiers:
+
+| Tier | Size | Used for |
+|---|---|---|
+| Full-bleed | 1536×1024, q72 | hero slides, page heroes, CTA bands |
+| Card | 1200×800, q78 | project cards, news cards, accordion figures |
+| Portrait | 768×1024, q78 | `art-energy`, `art-mining` — only ever shown in a portrait frame |
+
+Result: **71.6 MB of PNG became 3.52 MB of WebP — 95% smaller**, averaging
+~120 kB per image.
+
+Loading behaviour:
+- Every image carries intrinsic `width`/`height` so nothing shifts as it loads.
+- Everything below the fold is `loading="lazy"`.
+- The first hero slide is `fetchpriority="high"`; slides 2–4 hold their URL in
+  `data-src` and are fetched by the carousel just before they are shown, so the
+  first paint costs one 67 kB image instead of four.
+
+To replace a picture, drop a new PNG into `images/` under the same name and
+re-run the two commands above. `build/rewrite-img-tags.js` was the one-off that
+converted the markup from SVG to WebP; it does not need running again.
 
 ---
 
@@ -147,5 +170,5 @@ bars, the expandable "business platforms" accordion, the global-reach section bu
 a country count, big confident section headings, and a news grid that reads like a newsroom.
 
 **What is ours** — the copper-on-near-black identity taken from the OC mark, the serif /
-geometric-sans pairing, the generated sector artwork, the interactive globe, the scroll-driven
+geometric-sans pairing, the interactive globe, the scroll-driven
 project rail, and the trilingual EN/ES/FR system.

@@ -206,10 +206,18 @@
     var caps = $$('[data-hero-caption]');
     if (slides.length < 2) return;
     var i = 0, timer;
+    // Slides after the first carry data-src so they cost nothing on first paint.
+    function load(k) {
+      var img = slides[(k + slides.length) % slides.length].querySelector('img[data-src]');
+      if (!img) return;
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    }
     function go(n) {
       slides[i].classList.remove('on');
       if (dots[i]) dots[i].classList.remove('on');
       i = (n + slides.length) % slides.length;
+      load(i); load(i + 1);
       slides[i].classList.add('on');
       if (dots[i]) { dots[i].classList.remove('on'); void dots[i].offsetWidth; dots[i].classList.add('on'); }
       caps.forEach(function (c, k) { c.hidden = k !== i; });

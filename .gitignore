@@ -15,3 +15,9 @@ _shot.html
 _diag.html
 _t.html
 node_modules/
+
+# Source images from the generator (large PNGs + the raw download);
+# the optimised WebP in site/assets/img is what ships.
+images/
+node_modules/
+package-lock.json
