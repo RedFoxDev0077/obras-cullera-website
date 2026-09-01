@@ -472,7 +472,9 @@ body.menu-open .mm-list a{ transform:none; }
 .map-readout p{ font-size:.9rem; color:var(--txt-dim); }
 
 /* ----------------------------------------------------- 17. Horizontal rail */
-.rail-outer{ position:relative; overflow:hidden; }
+/* overflow-x:clip (not hidden) — hidden would make this a scroll container
+   and break the position:sticky viewport the rail scrubs inside. */
+.rail-outer{ position:relative; overflow-x:clip; }
 .rail{ display:flex; gap:clamp(16px,2vw,30px); will-change:transform; padding-inline:var(--gutter); }
 .rail-card{ flex:none; width:clamp(268px,30vw,430px); }
 .rail-fig{ position:relative; aspect-ratio:4/5; overflow:hidden; }

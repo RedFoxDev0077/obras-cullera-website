@@ -343,16 +343,20 @@
       track.style.transform = 'translate3d(' + cur.toFixed(2) + 'px,0,0)';
       requestAnimationFrame(loop);
     }
+    // The section is exactly as tall as the horizontal distance to travel plus
+    // one viewport, so the rail finishes precisely as the section leaves.
+    function layout() { outer.style.height = (span() + innerHeight) + 'px'; }
+
     if (matchMedia('(min-width: 900px)').matches) {
-      outer.style.height = (track.scrollWidth * 0.92) + 'px';
       outer.style.position = 'relative';
       // wrap contents in a sticky viewport so the rail scrubs horizontally
       var inner = document.createElement('div');
       inner.style.cssText = 'position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden';
       while (outer.firstChild) inner.appendChild(outer.firstChild);
       outer.appendChild(inner);
+      layout();
       addEventListener('scroll', onScroll, { passive: true });
-      addEventListener('resize', function () { outer.style.height = (track.scrollWidth * 0.92) + 'px'; onScroll(); });
+      addEventListener('resize', function () { layout(); onScroll(); });
       onScroll(); loop();
     } else {
       track.style.overflowX = 'auto';
