@@ -107,6 +107,9 @@ input,select,textarea{ font:inherit; color:inherit; }
 @media (min-width:900px){
   .section-head.cols{ grid-template-columns:minmax(0,1fr) minmax(0,.85fr); align-items:end; gap:56px; }
 }
+/* anchored sections must clear the fixed header when jumped to */
+main [id]{ scroll-margin-top:calc(var(--nav-h) + 20px); }
+
 .rule{ height:1px; background:var(--line); border:0; margin:0; }
 .section-light .rule{ background:var(--line-on-light); }
 
@@ -157,7 +160,7 @@ input,select,textarea{ font:inherit; color:inherit; }
   position:fixed; inset:0; z-index:2000; background:var(--ink);
   display:grid; place-items:center; transition:opacity .8s var(--e-out), visibility .8s;
 }
-#preloader.done{ opacity:0; visibility:hidden; }
+#preloader.done{ opacity:0; visibility:hidden; pointer-events:none; }
 html:not(.js) #preloader{ display:none; }
 .pre-inner{ display:grid; justify-items:center; gap:30px; width:min(320px,72vw); }
 .pre-mark{ width:118px; opacity:0; animation:preIn .9s .15s var(--e-out) forwards; }

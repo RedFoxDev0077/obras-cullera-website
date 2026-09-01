@@ -27,10 +27,54 @@
           el.classList.add('done');
           document.body.classList.remove('is-locked');
           document.documentElement.classList.add('loaded');
+          gotoHashWhenSettled();
           window.dispatchEvent(new CustomEvent('oc:ready'));
         }, 420);
       }
     }, REDUCED ? 60 : 210);
+  }
+
+  var revealTargets = [];
+
+  // Reveal anything currently on screen. IntersectionObserver does not reliably
+  // report elements that come into view via a programmatic jump, so after any
+  // scroll we do not control we sweep explicitly.
+  function sweep() {
+    var vh = innerHeight;
+    revealTargets.forEach(function (el) {
+      if (el.classList.contains('in')) return;
+      var r = el.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < vh) {
+        el.classList.add('in');
+        if (el.classList.contains('stat')) countUp(el);
+      }
+    });
+  }
+
+  /* --------------------------------------------------------- hash targeting */
+  // The preloader locks scrolling, which cancels the browser's own jump to a
+  // #fragment on load. Re-apply it once the lock is released.
+  function gotoHash() {
+    if (!location.hash || location.hash.length < 2) return;
+    var t;
+    try { t = document.querySelector(location.hash); } catch (e) { return; }
+    if (!t) return;
+    var root = document.documentElement;
+    var prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    t.scrollIntoView();
+    root.style.scrollBehavior = prev;
+    sweep();
+    requestAnimationFrame(sweep);
+  }
+
+  // Web fonts swap in after first paint and shift every heading, so the
+  // fragment has to be re-applied once metrics have settled.
+  function gotoHashWhenSettled() {
+    gotoHash();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { setTimeout(gotoHash, 60); });
+    }
   }
 
   /* ------------------------------------------------- page transition curtain */
@@ -47,6 +91,23 @@
       if (!href || a.target === '_blank' || a.hasAttribute('download')) return;
       if (href.charAt(0) === '#' || /^(mailto:|tel:|http)/i.test(href)) return;
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+
+      // A link to a section of the page we are already on: scroll, don't reload.
+      var url;
+      try { url = new URL(a.href, location.href); } catch (err) { url = null; }
+      if (url && url.hash && url.pathname === location.pathname) {
+        var t = null;
+        try { t = document.querySelector(url.hash); } catch (err2) {}
+        if (t) {
+          e.preventDefault();
+          document.body.classList.remove('menu-open', 'is-locked');
+          t.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
+          history.pushState(null, '', url.hash);
+          setTimeout(sweep, 700);
+          return;
+        }
+      }
+
       e.preventDefault();
       document.body.classList.remove('menu-open');
       c.className = 'out';
@@ -148,6 +209,7 @@
   function reveals() {
     splitLines();
     var targets = $$('[data-reveal], .mask, .split, .img-mask, .stat, .rail-hint');
+    revealTargets = targets;
     if (!('IntersectionObserver' in window) || REDUCED) {
       targets.forEach(function (t) { t.classList.add('in'); });
       $$('[data-count]').forEach(function (n) { n.textContent = n.dataset.count; });
@@ -458,6 +520,7 @@
     reveals(); hero(); particles(); accordion(); map(); filters();
     parallax(); magnetic(); marquee(); forms();
     requestAnimationFrame(rail);
+    addEventListener('hashchange', function () { gotoHash(); });
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
