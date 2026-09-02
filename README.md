@@ -39,8 +39,7 @@ site/
     css/main.css        Complete design system
     js/main.js          All interaction (no libraries)
     js/i18n.js          Spanish + French dictionaries
-    js/globe.js         Interactive canvas globe
-    js/globe-data.js    Generated land geometry (4,031 points)
+    js/globe.js         WebGL satellite Earth (see 5b)
     img/*.webp          30 optimised photographs (see 4) + logo-mark.svg
     logo/*.jpeg         The original logo files supplied by the client
 
@@ -48,7 +47,7 @@ build/
   build.js              Regenerates the inner pages from index.html's header/footer
   bodies/*.html         Page bodies (edit these, then run `node build/build.js`)
   optimise-images.js    images/*.png  ->  sized, compressed WebP
-  gen-globe-data.js     Natural Earth land polygons -> globe dot matrix
+  gen-earth-textures.js Blue Marble sources -> packed WebP textures
   gen-art.js            Generator for the original placeholder SVG artwork (superseded)
 
 images/                 Source PNGs — working files, not committed
@@ -143,25 +142,51 @@ converted the markup from SVG to WebP; it does not need running again.
 
 ---
 
-## 5b. The globe
+## 5b. The Earth
 
-`site/assets/js/globe.js` draws the footprint globe on a 2D canvas — no Three.js,
-no WebGL, no dependency. Land comes from Natural Earth 110m polygons, sampled
-onto a Fibonacci sphere (equal-area, so no crowding at the poles) and baked into
-`globe-data.js` as 4,031 points stored as base64 Int16 lat/lon — 21 kB.
+`site/assets/js/globe.js` renders a satellite view of Earth in **raw WebGL** —
+no Three.js, no framework. A single full-screen triangle; the fragment shader
+ray-traces the sphere and shades it per pixel:
 
-At runtime it applies yaw and tilt, projects orthographically, shades each dot
-by a directional light and fades it into the limb for depth. Markers and
-great-circle routes are drawn over the top. Drag to rotate, with inertia;
-hovering a country in the list spins the globe to face it.
+- **Surface** from NASA Blue Marble colour imagery
+- **Day/night terminator** — soft-edged Lambert, with city lights emerging only
+  once the sun has genuinely set on that longitude
+- **Cloud deck** sampled at its own longitude offset, so it drifts slowly
+  relative to the surface; it also casts a light shadow on the ground below
+- **Specular glint** off water, masked to the oceans
+- **Atmosphere** — Rayleigh-ish scattering thickening towards the limb, plus an
+  outer halo brightest on the sunlit side
+- **Space** with sparse stars, faded out before the canvas edge so the square
+  never shows
 
-To regenerate the geometry (e.g. at a different density, `N` at the top of the
-script):
+Rotation is one revolution every four minutes — an orbital drift rather than a
+spinning logo. Drag to rotate, with inertia; hovering a country in the list
+turns the globe to face it. Markers sit on a 2D overlay canvas that shares the
+shader's projection, which also keeps hit-testing simple.
+
+**Textures** (`build/gen-earth-textures.js`) pack three greyscale maps into the
+channels of one image, so the page makes two requests, not four:
+
+| File | Size | Contents |
+|---|---|---|
+| `earth-day-2048.webp` | 167 kB | colour surface (desktop) |
+| `earth-day-1024.webp` | 36 kB | colour surface (phones, low-DPR) |
+| `earth-mask-1024.webp` | 89 kB | R = city lights · G = cloud · B = ocean mask |
+
+256 kB on desktop, 125 kB on a phone — and **nothing is fetched and no GL
+context is created until the section is within 250 px of the viewport**. The
+render loop pauses whenever it scrolls out of view. Without WebGL it degrades to
+a static shaded disc.
+
+To regenerate:
 
 ```bash
-npm install --no-save world-atlas topojson-client d3-geo
-node build/gen-globe-data.js
+npm install --no-save sharp
+node build/gen-earth-textures.js     # reads images/earth/*
 ```
+
+Source imagery is NASA Blue Marble / Visible Earth (public domain), staged in
+`images/earth/` and not committed.
 
 ---
 

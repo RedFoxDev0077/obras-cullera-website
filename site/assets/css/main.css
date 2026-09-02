@@ -451,6 +451,11 @@ body.menu-open .mm-list a{ transform:none; }
 .map-stage{ position:relative; }
 .map-stage canvas.globe{
   display:block; width:100%; aspect-ratio:1; max-width:620px; margin-inline:auto;
+  outline:none;
+}
+.map-stage canvas.globe-pins{
+  position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:100%; max-width:620px; aspect-ratio:1;
   touch-action:pan-y; outline:none;
 }
 .map-legend{ display:grid; gap:14px; margin-top:30px; }
@@ -693,14 +698,11 @@ blockquote::after{ content:"\201D"; color:var(--copper); }
   --btn-ghost-fill:var(--bone);
   --btn-ghost-fg:  #08090A;
 
-  --globe-land:     #E9C09A;
-  --globe-land-dim: #8A5C33;
-  --globe-ocean-a:  #18232F;
-  --globe-ocean-b:  #070A0D;
-  --globe-grid:     rgba(230,185,141,.10);
-  --globe-atmo:     rgba(184,115,51,.34);
-  --globe-pin:      #F7E6D2;
-  --globe-arc:      rgba(230,185,141,.50);
+  --globe-atmo:          #5C8FD6;
+  --globe-space:         #05070B;
+  --globe-space-amount:  0.95;
+  --globe-pin:           #FFE0BC;
+  --globe-arc:           rgba(255,224,190,.20);
 }
 
 :root[data-theme="light"]{
@@ -723,14 +725,11 @@ blockquote::after{ content:"\201D"; color:var(--copper); }
   --btn-ghost-fill:#14120F;
   --btn-ghost-fg:  #F7F4EF;
 
-  --globe-land:     #8A4F22;
-  --globe-land-dim: #C4A183;
-  --globe-ocean-a:  #F2EBDF;
-  --globe-ocean-b:  #D6C9B6;
-  --globe-grid:     rgba(138,79,34,.14);
-  --globe-atmo:     rgba(184,115,51,.26);
-  --globe-pin:      #7A3F14;
-  --globe-arc:      rgba(138,79,34,.55);
+  --globe-atmo:          #7BA9E0;
+  --globe-space:         #0E1622;
+  --globe-space-amount:  0.10;
+  --globe-pin:           #FFE0BC;
+  --globe-arc:           rgba(255,224,190,.24);
 }
 
 /* --- blocks layered over photography keep the dark treatment in both themes */
