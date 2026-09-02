@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<script>document.documentElement.className+=" js";</script>
+<meta name="color-scheme" content="dark light">
+<script>(function(){var d=document.documentElement;d.className+=" js";try{var t=localStorage.getItem("oc-theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";d.setAttribute("data-theme",t);}catch(e){d.setAttribute("data-theme","dark");}})();</script>
 <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
@@ -37,6 +38,13 @@
     </symbol>
     <symbol id="i-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="m5 9 7 7 7-7"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <circle cx="12" cy="12" r="4.2"/>
+      <path d="M12 2.6v2.2M12 19.2v2.2M4.4 12H2.2M21.8 12h-2.2M6.3 6.3 4.8 4.8M19.2 19.2l-1.5-1.5M17.7 6.3l1.5-1.5M4.8 19.2l1.5-1.5"/>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+      <path d="M20.5 14.8A8.6 8.6 0 0 1 9.2 3.5a8.6 8.6 0 1 0 11.3 11.3z"/>
     </symbol>
     <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
       <path d="M12 19V5M6 11l6-6 6 6"/>
@@ -99,6 +107,10 @@
     </nav>
 
     <div class="head-tools">
+      <button class="theme-toggle" aria-label="Switch colour theme" title="Switch colour theme">
+        <svg class="ic-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="ic-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
       <div class="lang">
         <button class="lang-btn" aria-label="Change language"><span data-lang-current>EN</span><svg class="nav-caret" style="width:9px;height:9px"><use href="#i-caret"/></svg></button>
         <div class="lang-menu">
@@ -353,45 +365,7 @@
 
     <div class="map-wrap">
       <div class="map-stage" data-reveal="scale">
-        <svg viewBox="0 0 400 400" role="img" aria-label="Map of countries of operation">
-          <circle cx="200" cy="200" r="170" fill="rgba(247,244,239,.02)" stroke="rgba(247,244,239,.12)" stroke-width="1"/>
-          <g fill="none" stroke="rgba(247,244,239,.14)" stroke-width=".85">
-            <ellipse cx="200" cy="61.7" rx="85" ry="29.1"/>
-            <ellipse cx="200" cy="120.1" rx="147.2" ry="50.3"/>
-            <ellipse cx="200" cy="200" rx="170" ry="58.1"/>
-            <ellipse cx="200" cy="279.9" rx="147.2" ry="50.3"/>
-            <ellipse cx="200" cy="338.3" rx="85" ry="29.1"/>
-            <path d="M200 40.3 Q200 316.2 200 359.7"/>
-            <path d="M200 40.3 Q316.2 309.2 200 359.7"/>
-            <path d="M200 40.3 Q418.6 289.0 200 359.7"/>
-            <path d="M200 40.3 Q494.4 258.2 200 359.7"/>
-            <path d="M200 40.3 Q534.8 220.2 200 359.7"/>
-            <path d="M200 40.3 Q83.8 309.2 200 359.7"/>
-            <path d="M200 40.3 Q-18.6 289.0 200 359.7"/>
-            <path d="M200 40.3 Q-94.4 258.2 200 359.7"/>
-            <path d="M200 40.3 Q-134.8 220.2 200 359.7"/>
-          </g>
-          <g stroke="rgba(230,185,141,.45)" stroke-width=".9" fill="none">
-            <path d="M199.4 144.2 Q170 175 160.3 229.4"/>
-            <path d="M199.4 144.2 Q140 180 150.6 213.1"/>
-            <path d="M160.3 229.4 Q205 240 233.8 246.1"/>
-            <path d="M160.3 229.4 Q175 235 188.2 242.9"/>
-          </g>
-          <g class="pins">
-            <g class="pin" data-code="es"><circle class="halo" cx="199.4" cy="144.2" r="4"/><circle class="core" cx="199.4" cy="144.2" r="3.4"/></g>
-            <g class="pin" data-code="pt"><circle class="halo" cx="178.9" cy="144.9" r="4"/><circle class="core" cx="178.9" cy="144.9" r="3"/></g>
-            <g class="pin" data-code="ma"><circle class="halo" cx="183.3" cy="158.6" r="4"/><circle class="core" cx="183.3" cy="158.6" r="3"/></g>
-            <g class="pin" data-code="mr"><circle class="halo" cx="155.5" cy="203.5" r="4"/><circle class="core" cx="155.5" cy="203.5" r="3"/></g>
-            <g class="pin" data-code="sn"><circle class="halo" cx="150.6" cy="213.1" r="4"/><circle class="core" cx="150.6" cy="213.1" r="3"/></g>
-            <g class="pin" data-code="cv"><circle class="halo" cx="133.5" cy="207.0" r="4"/><circle class="core" cx="133.5" cy="207.0" r="3"/></g>
-            <g class="pin" data-code="gn"><circle class="halo" cx="160.3" cy="229.4" r="5"/><circle class="core" cx="160.3" cy="229.4" r="4.4"/></g>
-            <g class="pin" data-code="ml"><circle class="halo" cx="176.9" cy="221.4" r="4"/><circle class="core" cx="176.9" cy="221.4" r="3"/></g>
-            <g class="pin" data-code="ci"><circle class="halo" cx="188.2" cy="242.9" r="4"/><circle class="core" cx="188.2" cy="242.9" r="3"/></g>
-            <g class="pin" data-code="cm"><circle class="halo" cx="233.8" cy="246.1" r="4"/><circle class="core" cx="233.8" cy="246.1" r="3"/></g>
-            <g class="pin" data-code="gq"><circle class="halo" cx="219" cy="241" r="4"/><circle class="core" cx="219" cy="241" r="3"/></g>
-            <g class="pin" data-code="ga"><circle class="halo" cx="227.9" cy="256.3" r="4"/><circle class="core" cx="227.9" cy="256.3" r="3"/></g>
-          </g>
-        </svg>
+        <canvas class="globe" role="img" aria-label="Rotating globe showing Obras Cullera countries of operation"></canvas>
       </div>
 
       <div data-reveal="right">
@@ -666,6 +640,8 @@
 
 <button id="to-top" aria-label="Back to top"><svg width="18" height="18"><use href="#i-up"/></svg></button>
 
+<script src="assets/js/globe-data.js" defer></script>
+<script src="assets/js/globe.js" defer></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

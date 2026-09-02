@@ -39,6 +39,8 @@ site/
     css/main.css        Complete design system
     js/main.js          All interaction (no libraries)
     js/i18n.js          Spanish + French dictionaries
+    js/globe.js         Interactive canvas globe
+    js/globe-data.js    Generated land geometry (4,031 points)
     img/*.webp          30 optimised photographs (see 4) + logo-mark.svg
     logo/*.jpeg         The original logo files supplied by the client
 
@@ -46,6 +48,7 @@ build/
   build.js              Regenerates the inner pages from index.html's header/footer
   bodies/*.html         Page bodies (edit these, then run `node build/build.js`)
   optimise-images.js    images/*.png  ->  sized, compressed WebP
+  gen-globe-data.js     Natural Earth land polygons -> globe dot matrix
   gen-art.js            Generator for the original placeholder SVG artwork (superseded)
 
 images/                 Source PNGs — working files, not committed
@@ -124,7 +127,8 @@ converted the markup from SVG to WebP; it does not need running again.
 | Numbers | Eased count-up, locale-aware thousands separators |
 | Pillars | Image zoom + description expand on hover (always visible on touch) |
 | Platforms | Accordion with grid-template-rows transition and image reveal |
-| Footprint | Interactive orthographic globe: animated pins, connection arcs, linked country list and readout |
+| Footprint | Interactive 3D globe on canvas: real land geometry, directional lighting, depth shading, atmosphere, animated pins and great-circle routes, drag to rotate with inertia |
+| Theme | Dark / light toggle in the header, remembered per visitor, following the OS until they choose |
 | Projects | Scroll-driven horizontal rail (desktop) / snap-scroll (mobile); sector filter |
 | Cursor | Custom ring + dot with magnetic buttons (desktop only) |
 | Misc | Scroll progress bar, marquee ticker, parallax bands, back-to-top, form validation |
@@ -136,6 +140,47 @@ converted the markup from SVG to WebP; it does not need running again.
 - A 6-second failsafe reveals anything the observer missed.
 - Keyboard focus rings, ARIA labels, semantic landmarks, breadcrumbs.
 - Verified with no horizontal overflow from 485 px upward.
+
+---
+
+## 5b. The globe
+
+`site/assets/js/globe.js` draws the footprint globe on a 2D canvas — no Three.js,
+no WebGL, no dependency. Land comes from Natural Earth 110m polygons, sampled
+onto a Fibonacci sphere (equal-area, so no crowding at the poles) and baked into
+`globe-data.js` as 4,031 points stored as base64 Int16 lat/lon — 21 kB.
+
+At runtime it applies yaw and tilt, projects orthographically, shades each dot
+by a directional light and fades it into the limb for depth. Markers and
+great-circle routes are drawn over the top. Drag to rotate, with inertia;
+hovering a country in the list spins the globe to face it.
+
+To regenerate the geometry (e.g. at a different density, `N` at the top of the
+script):
+
+```bash
+npm install --no-save world-atlas topojson-client d3-geo
+node build/gen-globe-data.js
+```
+
+---
+
+## 5c. Dark and light themes
+
+The palette is entirely CSS custom properties. `:root` holds the dark values,
+`:root[data-theme="light"]` overrides them, and the theme is set on the root
+element by an inline script in `<head>` before first paint, so there is no flash.
+Choice is remembered in `localStorage`; until the visitor chooses, the site
+follows `prefers-color-scheme`.
+
+Blocks that sit on top of photography — the hero, page heroes, pillar cards,
+project and rail figures, the CTA band heading and the un-stuck header — keep a
+dark token set in **both** themes, because the scrims over the images stay dark
+either way. The header switches to the page palette as soon as it becomes
+sticky over content.
+
+The globe reads its colours from CSS variables too, and repaints them when the
+theme changes.
 
 ---
 

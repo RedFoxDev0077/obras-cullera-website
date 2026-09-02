@@ -178,6 +178,36 @@
     if (top) top.addEventListener('click', function () { scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' }); });
   }
 
+  /* --------------------------------------------------------------- theming */
+  function theming() {
+    var btn = $('.theme-toggle');
+    var root = document.documentElement;
+
+    function apply(t, persist) {
+      root.setAttribute('data-theme', t);
+      if (persist) { try { localStorage.setItem('oc-theme', t); } catch (e) {} }
+      if (btn) btn.setAttribute('aria-pressed', t === 'light' ? 'true' : 'false');
+      // the globe paints from CSS custom properties, so it has to re-read them
+      if (window.OCGlobeInstance) window.OCGlobeInstance.refreshTheme();
+    }
+
+    if (btn) btn.addEventListener('click', function () {
+      apply(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light', true);
+    });
+
+    // follow the OS only while the visitor has not chosen for themselves
+    var mq = matchMedia('(prefers-color-scheme: light)');
+    var onChange = function (e) {
+      var saved = null;
+      try { saved = localStorage.getItem('oc-theme'); } catch (err) {}
+      if (saved !== 'light' && saved !== 'dark') apply(e.matches ? 'light' : 'dark', false);
+    };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+
+    apply(root.getAttribute('data-theme') || 'dark', false);
+  }
+
   /* ------------------------------------------------------ language switch */
   function language() {
     var wrap = $('.lang');
@@ -360,24 +390,34 @@
     });
   }
 
-  /* ------------------------------------------------------------------- map */
+  /* ------------------------------------------------------------------ globe */
   function map() {
     var stage = $('.map-stage');
     if (!stage) return;
     var readout = $('.map-readout');
     var rows = $$('.map-country');
-    var pins = $$('.pin', stage);
+    var canvas = $('canvas.globe', stage);
 
     function show(code) {
-      pins.forEach(function (p) { p.classList.toggle('on', p.dataset.code === code); });
       rows.forEach(function (r) { r.classList.toggle('on', r.dataset.code === code); });
       var src = rows.filter(function (r) { return r.dataset.code === code; })[0];
       if (src && readout) {
         readout.innerHTML = '<h4>' + src.dataset.name + '</h4><p>' + src.dataset.desc + '</p>';
       }
     }
-    pins.forEach(function (p) { p.addEventListener('mouseenter', function () { show(p.dataset.code); }); p.addEventListener('click', function () { show(p.dataset.code); }); });
-    rows.forEach(function (r) { r.addEventListener('mouseenter', function () { show(r.dataset.code); }); r.addEventListener('click', function () { show(r.dataset.code); }); });
+
+    if (canvas && window.OCGlobe) {
+      window.OCGlobeInstance = window.OCGlobe.init(canvas, { onSelect: show });
+    }
+
+    rows.forEach(function (r) {
+      var go = function () {
+        show(r.dataset.code);
+        if (window.OCGlobeInstance) window.OCGlobeInstance.focus(r.dataset.code);
+      };
+      r.addEventListener('mouseenter', go);
+      r.addEventListener('click', go);
+    });
     if (rows[0]) show(rows[0].dataset.code);
   }
 
@@ -516,7 +556,7 @@
   /* ------------------------------------------------------------------ boot */
   function boot() {
     document.body.classList.add('is-locked');
-    preloader(); curtain(); cursor(); progress(); header(); language();
+    preloader(); curtain(); cursor(); progress(); header(); language(); theming();
     reveals(); hero(); particles(); accordion(); map(); filters();
     parallax(); magnetic(); marquee(); forms();
     requestAnimationFrame(rail);
