@@ -26,7 +26,21 @@ const PAGES = [
   { file: 'news',        nav: 'news.html',        title: 'News & Insights — Obras Cullera',
     desc: 'Project milestones, governance publications and infrastructure commentary from Obras Cullera.' },
   { file: 'contact',     nav: 'contact.html',     title: 'Contact — Obras Cullera',
-    desc: 'Speak to the group: offices in Cullera (Valencia), Conakry and Dakar. Public-sector mandates, suppliers, partners and careers.' }
+    desc: 'Speak to Obras Cullera. Head office in Cullera, Valencia. Opportunities, partners, operators and investors.' },
+
+  // the four activity areas, each with its own page
+  { file: 'area-infrastructure', nav: 'what-we-do.html', title: 'Infrastructure & Development — Obras Cullera',
+    desc: 'Identifying, structuring and developing opportunities linked to infrastructure, public facilities, real estate and territorial transformation.' },
+  { file: 'area-industry', nav: 'what-we-do.html', title: 'Industry & Market Entry — Obras Cullera',
+    desc: 'Supporting companies and investors from the decision to invest through to a real presence in a new market.' },
+  { file: 'area-aviation', nav: 'what-we-do.html', title: 'Aviation & Connectivity — Obras Cullera',
+    desc: 'Developing and structuring air connectivity opportunities alongside duly authorised operators.' },
+  { file: 'area-investment', nav: 'what-we-do.html', title: 'Investment & Strategic Opportunities — Obras Cullera',
+    desc: 'Identifying and structuring investment and business operations with the right partners.' },
+  { file: 'submit-opportunity', nav: 'contact.html', title: 'Submit an Opportunity — Obras Cullera',
+    desc: 'Present a national or international opportunity to Obras Cullera. Information is treated confidentially.' },
+  { file: 'operation', nav: 'projects.html', title: 'Operation — Obras Cullera',
+    desc: 'Detail template for an operation in development.' }
 ];
 
 PAGES.forEach(function (p) {

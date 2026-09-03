@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — Obras Cullera</title>
-<meta name="description" content="Speak to Obras Cullera. Head office in Cullera, Valencia. Opportunities, partners, operators and investors.">
+<title>Submit an Opportunity — Obras Cullera</title>
+<meta name="description" content="Present a national or international opportunity to Obras Cullera. Information is treated confidentially.">
 <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,92 +152,76 @@
 <section class="page-hero">
   <div class="page-hero-media"><img src="assets/img/art-contact.webp" width="1536" height="1024" decoding="async" alt="" aria-hidden="true"></div>
   <div class="shell">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a><span>/</span><span data-i18n="nav.contact">Contact</span></nav>
-    <h1 class="h1 split" data-i18n="ct.hero.title">Speak to<br>the <em>group</em></h1>
-    <p class="lede mt-m measure mask"><span data-i18n="ct.hero.sub">Public-sector mandates, development partners, suppliers and candidates — every enquiry reaches a named person, and every enquiry is answered.</span></p>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a><span>/</span><span data-i18n="cta.submit">Submit an opportunity</span></nav>
+    <h1 class="h1 split" data-i18n="so.hero.title">Present an<br><em>opportunity</em></h1>
+    <p class="lede mt-m measure mask"><span data-i18n="so.hero.sub">If you represent a company, an institution, an investor or an operator and you are studying a national or international opportunity, tell us about it. We will look at how it could be structured and what partners, capabilities and resources it would need.</span></p>
   </div>
 </section>
 
 <section class="section">
   <div class="shell contact-grid">
     <div>
-      <p class="eyebrow mask" style="margin-bottom:26px"><span data-i18n="ct.form.eyebrow">Send an enquiry</span></p>
-      <h2 class="h2 split" data-i18n="ct.form.title">Tell us what<br>you need to <em>build</em></h2>
-      <form class="mt-l" data-demo data-ok-key="ct.ok" data-err-key="form.err" novalidate>
+      <p class="eyebrow mask" style="margin-bottom:26px"><span data-i18n="so.form.eyebrow">The opportunity</span></p>
+      <h2 class="h2 split" data-i18n="so.form.title">Tell us what<br>you are <em>working on</em></h2>
+      <form class="mt-l" data-demo data-ok-key="so.ok" data-err-key="form.err" novalidate>
         <div class="form-grid">
           <div class="form-grid two">
-            <div class="field"><label for="c-name" data-i18n="ct.f.name">Full name</label><input id="c-name" type="text" required></div>
-            <div class="field"><label for="c-org" data-i18n="ct.f.org">Organisation / ministry</label><input id="c-org" type="text" required></div>
+            <div class="field"><label for="s-name" data-i18n="ct.f.name">Full name</label><input id="s-name" type="text" required></div>
+            <div class="field"><label for="s-company" data-i18n="so.f.company">Company</label><input id="s-company" type="text" required></div>
           </div>
           <div class="form-grid two">
-            <div class="field"><label for="c-mail" data-i18n="form.email">Email address</label><input id="c-mail" type="email" required></div>
-            <div class="field"><label for="c-country" data-i18n="ct.f.country">Country</label><input id="c-country" type="text"></div>
+            <div class="field"><label for="s-role" data-i18n="so.f.role">Position</label><input id="s-role" type="text"></div>
+            <div class="field"><label for="s-country" data-i18n="ct.f.country">Country</label><input id="s-country" type="text"></div>
+          </div>
+          <div class="form-grid two">
+            <div class="field"><label for="s-mail" data-i18n="form.email">Email address</label><input id="s-mail" type="email" required data-i18n-ph="form.email.ph" placeholder="name@company.com"></div>
+            <div class="field"><label for="s-tel" data-i18n="so.f.phone">Telephone</label><input id="s-tel" type="tel"></div>
+          </div>
+          <div class="form-grid two">
+            <div class="field">
+              <label for="s-sector" data-i18n="so.f.sector">Sector</label>
+              <select id="s-sector">
+                <option data-i18n="filter.infra">Infrastructure</option>
+                <option data-i18n="filter.aviation">Aviation &amp; mobility</option>
+                <option data-i18n="filter.industry">Industry &amp; logistics</option>
+                <option data-i18n="filter.energy2">Energy &amp; resources</option>
+                <option data-i18n="filter.realestate">Real estate</option>
+                <option data-i18n="filter.investment">Investment &amp; development</option>
+                <option data-i18n="so.opt.other">Other</option>
+              </select>
+            </div>
+            <div class="field"><label for="s-where" data-i18n="so.f.where">Country where it would be developed</label><input id="s-where" type="text"></div>
           </div>
           <div class="field">
-            <label for="c-subject" data-i18n="ct.f.subject">Nature of the enquiry</label>
-            <select id="c-subject">
-              <option data-i18n="ct.opt1">Public-sector mandate or project</option>
-              <option data-i18n="ct.opt2">Development finance / PPP structuring</option>
-              <option data-i18n="ct.opt3">Supplier or subcontractor registration</option>
-              <option data-i18n="ct.opt4">Careers</option>
-              <option data-i18n="ct.opt5">Media &amp; communications</option>
-              <option data-i18n="ct.opt6">Compliance or whistleblowing</option>
+            <label for="s-type" data-i18n="so.f.type">Type of collaboration sought</label>
+            <select id="s-type">
+              <option data-i18n="so.type1">Strategic partner</option>
+              <option data-i18n="so.type2">Investor</option>
+              <option data-i18n="so.type3">Operator</option>
+              <option data-i18n="so.type4">Joint venture</option>
+              <option data-i18n="so.type5">Business development / representation</option>
+              <option data-i18n="so.type6">Structuring and coordination</option>
+              <option data-i18n="so.opt.other">Other</option>
             </select>
           </div>
-          <div class="field"><label for="c-msg" data-i18n="ct.f.msg">Message</label><textarea id="c-msg" required></textarea></div>
+          <div class="field"><label for="s-desc" data-i18n="so.f.desc">Brief description of the opportunity</label><textarea id="s-desc" required></textarea></div>
+          <div class="field"><label for="s-file" data-i18n="so.f.file">Attach documentation (optional)</label><input id="s-file" type="file"></div>
+          <label class="check"><input type="checkbox" id="s-nda" required><span data-i18n="so.f.consent">I understand that this information will be treated confidentially in accordance with the privacy policy.</span></label>
         </div>
-        <div class="mt-m"><button class="btn" type="submit"><span data-i18n="ct.send">Send enquiry</span><svg class="ic"><use href="#i-arrow"/></svg></button></div>
+        <div class="mt-m"><button class="btn" type="submit"><span data-i18n="so.send">Send the opportunity</span><svg class="ic"><use href="#i-arrow"/></svg></button></div>
         <p class="form-msg" role="status"></p>
         <p class="form-note" data-i18n="ct.note">This form is a front-end demonstration for the launch build; no data is transmitted or stored. It will be connected to the group mailbox before go-live.</p>
       </form>
     </div>
 
     <div data-reveal="right">
-      <p class="eyebrow" style="margin-bottom:26px"><span data-i18n="ct.off.eyebrow">Offices</span></p>
-      <div class="office">
-        <h4 class="h4"><span data-i18n="ct.off1.city">Cullera, Valencia</span><span class="flag" data-i18n="ct.off1.tag">Headquarters</span></h4>
-        <p data-i18n="ct.off1.a">Passeig Marítim · 46400 Cullera, Valencia · Spain</p>
-        <p><a class="link-arrow" href="mailto:info@obrascullera.com">info@obrascullera.com</a></p>
+      <p class="eyebrow" style="margin-bottom:26px"><span data-i18n="so.what.eyebrow">What happens next</span></p>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-year">01</div><div><h4 class="h4" data-i18n="so.n1.t">We read it</h4><p class="muted" data-i18n="so.n1.p">Every submission reaches a named person and is answered.</p></div></div>
+        <div class="tl-item"><div class="tl-year">02</div><div><h4 class="h4" data-i18n="so.n2.t">We assess it</h4><p class="muted" data-i18n="so.n2.p">We look at the context, initial viability, the parties involved and possible structures for the operation.</p></div></div>
+        <div class="tl-item"><div class="tl-year">03</div><div><h4 class="h4" data-i18n="so.n3.t">We reply either way</h4><p class="muted" data-i18n="so.n3.p">If it is not something we can contribute to, we say so plainly.</p></div></div>
       </div>
-      <div class="mt-l" id="careers">
-        <h3 class="h3" data-i18n="ct.careers.t">Careers</h3>
-        <p class="muted mt-s" data-i18n="ct.careers.p">We recruit engineers, quantity surveyors, environmental and social specialists and finance professionals across all three regions. Applications from nationals of our host countries are prioritised at every grade.</p>
-      </div>
-
-      <div class="mt-l" id="suppliers">
-        <h3 class="h3" data-i18n="ct.sup.t">Suppliers &amp; partners</h3>
-        <p class="muted mt-s" data-i18n="ct.sup.p">Local suppliers can register for pre-qualification at any time. Registration is free, requires no intermediary, and no payment is ever requested in exchange for consideration.</p>
-      </div>
-
-      <div class="note-strip mt-l" data-i18n="ct.compliance">Suspected irregularity? Our whistleblowing channel is operated externally and is available in Spanish, French, English and Portuguese, with protection guarantees for the reporting party.</div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-mid">
-  <div class="shell">
-    <div class="section-head">
-      <p class="eyebrow mask"><span data-i18n="home.map.eyebrow">International scope</span></p>
-      <h2 class="h2 split" data-i18n="ct.map.title">Where we<br><em>work</em></h2>
-    </div>
-    <div class="map-wrap">
-      <div class="map-stage" data-reveal="scale">
-        <canvas class="globe" role="img" aria-label="Rotating globe showing Obras Cullera countries of operation"></canvas>
-      </div>
-      <div data-reveal="right">
-        <div class="map-readout"></div>
-        <div class="map-legend">
-          <div class="map-country" data-code="es" data-name="Spain" data-desc="Head office in Cullera, Valencia. Coordination, business development and corporate functions." data-i18n-map="c.es">
-            <span class="mc-name">Spain</span><span class="mc-val">Head office</span>
-          </div>
-          <div class="map-country" data-code="gn" data-name="Africa" data-desc="Markets in which we identify, structure and develop opportunities, working with local partners and collaborators." data-i18n-map="c.af">
-            <span class="mc-name">Africa</span><span class="mc-val">Markets</span>
-          </div>
-          <div class="map-country" data-code="ae" data-name="Middle East" data-desc="Markets in which we identify, structure and develop opportunities, working with local partners and collaborators." data-i18n-map="c.me">
-            <span class="mc-name">Middle East</span><span class="mc-val">Markets</span>
-          </div>
-        </div>
-      </div>
+      <div class="note-strip mt-l" data-i18n="so.conf">Information received is treated confidentially. Where an opportunity requires it, we are willing to sign a non-disclosure agreement before going into detail.</div>
     </div>
   </div>
 </section>
