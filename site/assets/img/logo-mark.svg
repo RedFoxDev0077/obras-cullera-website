@@ -10,8 +10,8 @@
       <stop offset="100%" stop-color="#7E441E"/>
     </linearGradient>
   </defs>
-  <g fill="none" stroke="url(#oc)" stroke-width="23" stroke-linecap="round">
-    <circle class="oc-o" cx="330" cy="355" r="252"/>
-    <path class="oc-c" d="M 1072.5 235.8 A 272 272 0 1 0 1072.5 474.2"/>
+  <g fill="none" stroke="url(#oc)" stroke-width="22" stroke-linecap="butt">
+    <circle cx="336" cy="354" r="260"/>
+    <path d="M 1090.2 223 A 278 278 0 1 0 1090.2 485"/>
   </g>
 </svg>

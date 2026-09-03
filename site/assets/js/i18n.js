@@ -23,32 +23,32 @@ window.OCI18N = (function () {
 
 /* --- home -------------------------------------------------------------- */
 'home.hero.eyebrow':'Negocios y Desarrollo Internacional',
-'home.hero.title':'Construimos los<br>cimientos de la<br><em>prosperidad compartida</em>',
-'home.hero.sub':'Originamos, estructuramos, financiamos y ejecutamos las infraestructuras de las que dependen los países — con un único estándar de ingeniería, gobernanza y retorno social, allá donde construimos.',
-'home.hero.cta1':'Ver nuestros proyectos','home.hero.cta2':'Quiénes somos','home.hero.scroll':'Desplazar',
-'home.hero.cap1':'Corredor Conakry–Kindia · República de Guinea',
-'home.hero.cap2':'Plataforma Logística Industrial de Boké · Guinea',
-'home.hero.cap3':'Clúster Solar de Nuakchot · Mauritania',
-'home.hero.cap4':'Regeneración del Frente Marítimo de Cullera · España',
-'home.mission.eyebrow':'Nuestro mandato',
-'home.mission.title':'La infraestructura<br>no es una transacción.<br>Es una <em>promesa</em><br>mantenida durante décadas.',
-'home.mission.p1':'Obras Cullera es un grupo internacional de desarrollo y obra pública. Trabajamos junto a gobiernos, instituciones financieras de desarrollo y socios industriales para convertir las prioridades nacionales en activos que funcionan: carreteras que siguen abiertas, hospitales que siguen dotados, redes de agua que siguen presurizadas.',
-'home.mission.p2':'Fundada en Cullera, Valencia, y operando desde Conakry en África Occidental, el Magreb e Iberia, combinamos la disciplina de la ingeniería europea con una presencia local profunda y un marco de gobernanza sin concesiones.',
+'home.hero.title':'Convertimos oportunidades en<br><em>proyectos con futuro</em>',
+'home.hero.sub':'Identificamos oportunidades, conectamos socios estratégicos y participamos en la estructuración y desarrollo de proyectos y negocios con vocación internacional.',
+'home.hero.cta1':'Nuestras áreas de actividad','home.hero.cta2':'Quiénes somos','home.hero.scroll':'Desplazar',
+'home.hero.cap1':'Infraestructuras y desarrollo',
+'home.hero.cap2':'Industria y logística',
+'home.hero.cap3':'Energía y recursos',
+'home.hero.cap4':'Desarrollo urbano y territorial',
+'home.mission.eyebrow':'Nuestra visión',
+'home.mission.title':'Las oportunidades adquieren valor<br><em>cuando sabemos conectarlas.</em>',
+'home.mission.p1':'Obras Cullera es una compañía española de negocios y desarrollo orientada a la identificación, estructuración y desarrollo de oportunidades empresariales y proyectos con vocación internacional.',
+'home.mission.p2':'Conectamos iniciativa, conocimiento, capital y socios estratégicos para impulsar operaciones en distintos sectores y mercados, participando en cada proyecto con una estructura adaptada a sus necesidades y objetivos.',
 'home.mission.badge':'<b>ISO 9001 · 14001 · 45001</b> <span>Sistemas de gestión certificados</span>',
-'home.mission.link':'Leer nuestra historia',
+'home.mission.link':'Conocer Obras Cullera',
 'home.stat1':'Fundada en Cullera, Valencia','home.stat2':'Cartera en desarrollo',
 'home.stat3':'Proyectos entregados desde su fundación','home.stat4':'Países de operación',
 'home.pillars.eyebrow':'Dónde creamos valor',
-'home.pillars.title':'Cuatro ámbitos de<br>infraestructura <em>esencial</em>',
-'home.pillars.sub':'Todo mandato que aceptamos debe responder a una necesidad pública, superar una prueba de coste de ciclo de vida completo y dejar capacidad instalada en el país que lo acoge.',
-'home.pillar1.t':'Obra pública e ingeniería civil',
-'home.pillar1.p':'Carreteras, puentes, puertos, hospitales, escuelas y edificios administrativos — diseñados para el presupuesto de mantenimiento que realmente existirá.',
-'home.pillar2.t':'Energía, agua y medio ambiente',
-'home.pillar2.p':'Generación y transporte, agua potable, saneamiento y residuos — los sistemas que deciden si una ciudad puede crecer.',
-'home.pillar3.t':'Recursos naturales e industria',
-'home.pillar3.p':'Obras asociadas a la minería, plataformas de procesamiento y polígonos industriales que convierten la dotación natural en valor doméstico.',
-'home.pillar4.t':'Desarrollo urbano y territorial',
-'home.pillar4.p':'Vivienda, mercados, frentes marítimos y programas de regeneración ejecutados junto a los municipios que los gestionarán.',
+'home.pillars.title':'Cuatro ámbitos de<br><em>desarrollo y oportunidad</em>',
+'home.pillars.sub':'Seleccionamos oportunidades en las que nuestra capacidad para conectar iniciativa, socios, conocimiento y recursos pueda contribuir a transformar una oportunidad en un proyecto viable.',
+'home.pillar1.t':'Infraestructuras y desarrollo',
+'home.pillar1.p':'Identificación, estructuración y desarrollo de oportunidades vinculadas a infraestructuras, equipamientos, desarrollos inmobiliarios y transformación territorial.',
+'home.pillar2.t':'Industria e implantación empresarial',
+'home.pillar2.p':'Desarrollo de oportunidades industriales y acompañamiento de empresas en su implantación en nuevos mercados, conectando inversión, socios y capacidades locales.',
+'home.pillar3.t':'Aviación y conectividad',
+'home.pillar3.p':'Desarrollo e intermediación en oportunidades vinculadas a conectividad aérea, operadores, nuevas rutas y soluciones de transporte y movilidad internacional.',
+'home.pillar4.t':'Inversión y oportunidades estratégicas',
+'home.pillar4.p':'Identificación y estructuración de oportunidades de inversión y negocio, creación de alianzas y desarrollo de operaciones junto a socios estratégicos.',
 'home.platforms.eyebrow':'Nuestras plataformas',
 'home.platforms.title':'Un grupo,<br>cuatro <em>capacidades</em>',
 'home.platforms.sub':'Cada plataforma cuenta con su propia dirección de ingeniería, disciplina de balance y equipos de país — y están diseñadas para combinarse en un mismo mandato.',
@@ -82,9 +82,9 @@ window.OCI18N = (function () {
 'home.cta.sub':'Nuestro mejor trabajo empieza en la fase de viabilidad, cuando el alcance, la estructura financiera y el modelo de mantenimiento aún pueden diseñarse juntos.',
 
 /* --- footer ------------------------------------------------------------ */
-'foot.news.title':'Reciba nuestro informe trimestral',
-'foot.news.sub':'Hitos de proyecto, publicaciones de gobernanza y análisis de infraestructura. Cuatro números al año, ni uno más.',
-'foot.blurb':'Obras Cullera S.L. — negocios y desarrollo internacional. Ingeniería, financiación y ejecución de infraestructuras esenciales.',
+'foot.news.title':'Perspectivas y oportunidades',
+'foot.news.sub':'Actualidad corporativa, mercados, proyectos y análisis sobre desarrollo internacional.',
+'foot.blurb':'Obras Cullera S.L. — Negocios y Desarrollo Internacional.<br>Identificación, estructuración, desarrollo y coordinación de oportunidades y proyectos internacionales.',
 'foot.col1':'Grupo','foot.col2':'Participe','foot.col3':'Oficinas',
 'foot.careers':'Empleo','foot.suppliers':'Proveedores y socios',
 'foot.legal':'Aviso legal','foot.privacy':'Privacidad','foot.cookies':'Cookies','foot.compliance':'Cumplimiento y denuncias',
@@ -242,7 +242,9 @@ window.OCI18N = (function () {
 'ct.careers.t':'Empleo','ct.careers.p':'Buscamos ingenieros, aparejadores, especialistas ambientales y sociales y profesionales financieros en las tres regiones. Las candidaturas de nacionales de nuestros países de acogida tienen prioridad en todas las categorías.',
 'ct.sup.t':'Proveedores y socios','ct.sup.p':'Los proveedores locales pueden inscribirse en la precalificación en cualquier momento. La inscripción es gratuita, no requiere intermediario y nunca se solicita pago alguno a cambio de ser considerado.',
 'ct.compliance':'¿Sospecha una irregularidad? Nuestro canal de denuncias está operado externamente y disponible en español, francés, inglés y portugués, con garantías de protección para quien informa.',
-'ct.map.title':'Dónde puede<br><em>encontrarnos</em>'
+'ct.map.title':'Dónde puede<br><em>encontrarnos</em>',
+'form.email.ph':'nombre@empresa.com',
+
   };
 
   var ES_MAP = {
@@ -274,32 +276,32 @@ window.OCI18N = (function () {
 
 /* --- home -------------------------------------------------------------- */
 'home.hero.eyebrow':'Affaires et Développement International',
-'home.hero.title':'Bâtir les<br>fondations d’une<br><em>prospérité partagée</em>',
-'home.hero.sub':'Nous initions, structurons, finançons et livrons les infrastructures dont dépendent les nations — avec un seul standard d’ingénierie, de gouvernance et de retour social, où que nous construisions.',
-'home.hero.cta1':'Découvrir nos projets','home.hero.cta2':'Qui sommes-nous','home.hero.scroll':'Défiler',
-'home.hero.cap1':'Corridor Conakry–Kindia · République de Guinée',
-'home.hero.cap2':'Plateforme logistique industrielle de Boké · Guinée',
-'home.hero.cap3':'Grappe solaire de Nouakchott · Mauritanie',
-'home.hero.cap4':'Réaménagement du front de mer de Cullera · Espagne',
-'home.mission.eyebrow':'Notre mandat',
-'home.mission.title':'L’infrastructure<br>n’est pas une transaction.<br>C’est une <em>promesse</em><br>tenue sur des décennies.',
-'home.mission.p1':'Obras Cullera est un groupe international de développement et de travaux publics. Nous travaillons aux côtés des gouvernements, des institutions de financement du développement et de partenaires industriels pour transformer les priorités nationales en actifs qui fonctionnent : des routes qui restent ouvertes, des hôpitaux qui restent dotés, des réseaux d’eau qui restent sous pression.',
-'home.mission.p2':'Fondé à Cullera, Valence, et opérant depuis Conakry en Afrique de l’Ouest, au Maghreb et dans la péninsule Ibérique, le groupe allie la discipline de l’ingénierie européenne à une présence locale profonde et à un cadre de gouvernance sans concession.',
+'home.hero.title':'Nous transformons les opportunités en<br><em>projets d’avenir</em>',
+'home.hero.sub':'Nous identifions des opportunités, connectons des partenaires stratégiques et participons à la structuration et au développement de projets et d’activités à vocation internationale.',
+'home.hero.cta1':'Nos domaines d’activité','home.hero.cta2':'Qui sommes-nous','home.hero.scroll':'Défiler',
+'home.hero.cap1':'Infrastructures et développement',
+'home.hero.cap2':'Industrie et logistique',
+'home.hero.cap3':'Énergie et ressources',
+'home.hero.cap4':'Développement urbain et territorial',
+'home.mission.eyebrow':'Notre vision',
+'home.mission.title':'Les opportunités prennent de la valeur<br><em>quand on sait les relier.</em>',
+'home.mission.p1':'Obras Cullera est une société espagnole de développement et d’affaires, orientée vers l’identification, la structuration et le développement d’opportunités entrepreneuriales et de projets à vocation internationale.',
+'home.mission.p2':'Nous relions initiative, savoir-faire, capitaux et partenaires stratégiques pour faire avancer des opérations dans différents secteurs et marchés, en participant à chaque projet avec une structure adaptée à ses besoins et à ses objectifs.',
 'home.mission.badge':'<b>ISO 9001 · 14001 · 45001</b> <span>Systèmes de management certifiés</span>',
-'home.mission.link':'Lire notre histoire',
+'home.mission.link':'Découvrir Obras Cullera',
 'home.stat1':'Fondée à Cullera, Valence','home.stat2':'Portefeuille en développement',
 'home.stat3':'Projets livrés depuis la création','home.stat4':'Pays d’opération',
 'home.pillars.eyebrow':'Où nous créons de la valeur',
-'home.pillars.title':'Quatre domaines<br>d’infrastructure <em>essentielle</em>',
-'home.pillars.sub':'Chaque mandat que nous acceptons doit répondre à un besoin public, passer un test de coût sur le cycle de vie complet et laisser des capacités dans le pays qui l’accueille.',
-'home.pillar1.t':'Travaux publics et génie civil',
-'home.pillar1.p':'Routes, ponts, ports, hôpitaux, écoles et bâtiments administratifs — conçus pour le budget d’entretien qui existera réellement.',
-'home.pillar2.t':'Énergie, eau et environnement',
-'home.pillar2.p':'Production et transport, eau potable, assainissement et déchets — les systèmes qui décident si une ville peut croître.',
-'home.pillar3.t':'Ressources naturelles et industrie',
-'home.pillar3.p':'Travaux liés aux mines, plateformes de transformation et zones industrielles qui convertissent la dotation naturelle en valeur domestique.',
-'home.pillar4.t':'Développement urbain et territorial',
-'home.pillar4.p':'Logement, marchés, fronts de mer et programmes de régénération réalisés avec les municipalités qui les exploiteront.',
+'home.pillars.title':'Quatre domaines de<br><em>développement et d’opportunité</em>',
+'home.pillars.sub':'Nous sélectionnons les opportunités où notre capacité à relier initiative, partenaires, savoir-faire et ressources peut contribuer à transformer une opportunité en projet viable.',
+'home.pillar1.t':'Infrastructures et développement',
+'home.pillar1.p':'Identification, structuration et développement d’opportunités liées aux infrastructures, aux équipements, aux développements immobiliers et à la transformation territoriale.',
+'home.pillar2.t':'Industrie et implantation',
+'home.pillar2.p':'Développement d’opportunités industrielles et accompagnement des entreprises dans leur implantation sur de nouveaux marchés, en reliant investissement, partenaires et capacités locales.',
+'home.pillar3.t':'Aviation et connectivité',
+'home.pillar3.p':'Développement et intermédiation d’opportunités liées à la connectivité aérienne, aux opérateurs, aux nouvelles routes et aux solutions de transport et de mobilité internationale.',
+'home.pillar4.t':'Investissement et opportunités stratégiques',
+'home.pillar4.p':'Identification et structuration d’opportunités d’investissement et d’affaires, création d’alliances et développement d’opérations aux côtés de partenaires stratégiques.',
 'home.platforms.eyebrow':'Nos plateformes',
 'home.platforms.title':'Un groupe,<br>quatre <em>capacités</em>',
 'home.platforms.sub':'Chaque plateforme dispose de sa propre direction d’ingénierie, de sa discipline financière et de ses équipes pays — et elles sont conçues pour être combinées sur un même mandat.',
@@ -333,9 +335,9 @@ window.OCI18N = (function () {
 'home.cta.sub':'Notre meilleur travail commence au stade de la faisabilité, lorsque le périmètre, le montage financier et le modèle d’entretien peuvent encore être conçus ensemble.',
 
 /* --- footer ------------------------------------------------------------ */
-'foot.news.title':'Recevez notre briefing trimestriel',
-'foot.news.sub':'Jalons de projets, publications de gouvernance et analyses d’infrastructure. Quatre numéros par an, pas davantage.',
-'foot.blurb':'Obras Cullera S.L. — affaires et développement international. Ingénierie, financement et réalisation d’infrastructures essentielles.',
+'foot.news.title':'Perspectives et opportunités',
+'foot.news.sub':'Actualité corporate, marchés, projets et analyses sur le développement international.',
+'foot.blurb':'Obras Cullera S.L. — Affaires et Développement International.<br>Identification, structuration, développement et coordination d’opportunités et de projets internationaux.',
 'foot.col1':'Groupe','foot.col2':'S’engager','foot.col3':'Bureaux',
 'foot.careers':'Carrières','foot.suppliers':'Fournisseurs et partenaires',
 'foot.legal':'Mentions légales','foot.privacy':'Confidentialité','foot.cookies':'Cookies','foot.compliance':'Conformité et alertes',
@@ -493,7 +495,9 @@ window.OCI18N = (function () {
 'ct.careers.t':'Carrières','ct.careers.p':'Nous recrutons des ingénieurs, économistes de la construction, spécialistes environnementaux et sociaux et professionnels de la finance dans les trois régions. Les candidatures de ressortissants de nos pays hôtes sont prioritaires à tous les grades.',
 'ct.sup.t':'Fournisseurs et partenaires','ct.sup.p':'Les fournisseurs locaux peuvent s’inscrire à la préqualification à tout moment. L’inscription est gratuite, ne requiert aucun intermédiaire et aucun paiement n’est jamais demandé en échange d’une prise en considération.',
 'ct.compliance':'Vous soupçonnez une irrégularité ? Notre canal d’alerte est exploité en externe et disponible en espagnol, français, anglais et portugais, avec des garanties de protection pour l’auteur du signalement.',
-'ct.map.title':'Où nous <em>trouver</em>'
+'ct.map.title':'Où nous <em>trouver</em>',
+'form.email.ph':'nom@entreprise.com',
+
   };
 
   var FR_MAP = {
@@ -530,6 +534,11 @@ window.OCI18N = (function () {
       var k = el.getAttribute('data-i18n') || el.getAttribute('data-i18n-html');
       if (k && !(k in originals)) originals[k] = el.innerHTML;
     });
+    // placeholders are attributes, not content, so they cache separately
+    document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-ph');
+      if (k && !(k in originals)) originals[k] = el.getAttribute('placeholder') || '';
+    });
     Object.keys(EN_EXTRA).forEach(function (k) { if (!(k in originals)) originals[k] = EN_EXTRA[k]; });
 
     mapOriginals = [];
@@ -551,6 +560,11 @@ window.OCI18N = (function () {
       if (v == null) return;
       if (el.innerHTML !== v) el.innerHTML = v;
       if (el.dataset.splitDone) { delete el.dataset.splitDone; }
+    });
+
+    document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+      var v = textFor(el.getAttribute('data-i18n-ph'), lang);
+      if (v != null) el.setAttribute('placeholder', v);
     });
 
     // map legend rows carry their copy in data attributes
