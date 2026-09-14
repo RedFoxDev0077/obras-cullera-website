@@ -14,15 +14,10 @@ window.OCGlobe = (function () {
   var DEG = Math.PI / 180;
   var TAU = Math.PI * 2;
 
-  var PINS = {
-    es: [39.17, -0.25], pt: [38.72, -9.14], ma: [34.02, -6.83],
-    mr: [18.09, -15.98], sn: [14.72, -17.47], cv: [14.93, -23.51],
-    gn: [9.51, -13.71], ml: [12.64, -8.00], ci: [5.36, -4.01],
-    cm: [3.85, 11.50], gq: [3.75, 8.78], ga: [0.39, 9.45],
-    ae: [24.47, 54.37], sa: [24.71, 46.68]
-  };
-  var ARCS = [['es', 'gn'], ['es', 'sn'], ['es', 'ma'], ['gn', 'ci'], ['gn', 'cm']];
-  var HUB = 'gn';
+  // one marker per market in the legend: Spain (head office), Africa, Middle East
+  var PINS = { es: [39.17, -0.25], gn: [9.51, -13.71], ae: [24.47, 54.37] };
+  var ARCS = [['es', 'gn'], ['es', 'ae']];
+  var HUB = 'es';
 
   // one revolution every four minutes — an orbital drift, not a spinning logo
   var SPIN = TAU / 240;

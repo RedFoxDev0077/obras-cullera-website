@@ -16,15 +16,15 @@ const CHROME_BOTTOM = index.slice(footStart);
 
 const PAGES = [
   { file: 'who-we-are',  nav: 'who-we-are.html',  title: 'Who We Are — Obras Cullera',
-    desc: 'An international development and public-works group founded in Cullera, Valencia, operating across West Africa, the Maghreb and Iberia.' },
+    desc: 'Obras Cullera is a Spanish business and development company that identifies opportunities, connects capabilities and structures operations.' },
   { file: 'what-we-do',  nav: 'what-we-do.html',  title: 'What We Do — Obras Cullera',
-    desc: 'Four platforms: public works and civil engineering, energy water and environment, natural resources and industry, development finance and PPP advisory.' },
+    desc: 'Four areas: infrastructure and development, industry and market entry, aviation and connectivity, investment and strategic opportunities.' },
   { file: 'projects',    nav: 'projects.html',    title: 'Projects — Obras Cullera',
-    desc: 'Road corridors, hospitals, water systems, solar clusters and industrial platforms in delivery across twelve countries.' },
+    desc: 'Projects and opportunities: how Obras Cullera identifies, structures, negotiates and develops operations with its partners.' },
   { file: 'our-impact',  nav: 'our-impact.html',  title: 'Our Impact — Obras Cullera',
-    desc: 'Impact and governance framework: local content, environmental stewardship, community programmes and reporting against the UN SDGs.' },
+    desc: 'Our approach: local development, knowledge transfer, long-term viability, governance and transparency.' },
   { file: 'news',        nav: 'news.html',        title: 'News & Insights — Obras Cullera',
-    desc: 'Project milestones, governance publications and infrastructure commentary from Obras Cullera.' },
+    desc: 'Corporate news from Obras Cullera: agreements, operations, alliances and analysis.' },
   { file: 'contact',     nav: 'contact.html',     title: 'Contact — Obras Cullera',
     desc: 'Speak to Obras Cullera. Head office in Cullera, Valencia. Opportunities, partners, operators and investors.' },
 
