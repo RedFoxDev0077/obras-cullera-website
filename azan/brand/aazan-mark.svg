@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 130 440 340" role="img" aria-label="Aazan">
+  <title>Aazan</title>
+  <defs>
+    <mask id="am3" maskUnits="userSpaceOnUse" x="80" y="130" width="440" height="340">
+      <rect x="80" y="130" width="440" height="340" fill="#fff"/>
+      <path d="M92 462 Q240 290 505 268 Q270 318 132 462 Z" fill="#000" stroke="#000" stroke-width="14" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <g fill="#16181d">
+    <path d="M95 460 L275 195 Q310 140 345 195 L482 460 L400 460 L306 282 Q290 250 274 282 L175 460 Z" mask="url(#am3)"/>
+    <path d="M92 462 Q240 290 505 268 Q270 318 132 462 Z"/>
+  </g>
+</svg>

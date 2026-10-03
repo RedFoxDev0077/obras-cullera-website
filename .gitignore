@@ -11,7 +11,7 @@ desktop.ini
 
 # Local preview / scratch files
 _v_*.html
-_shot.html
+_shot*.html
 _diag.html
 _t.html
 node_modules/
