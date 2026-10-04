@@ -147,8 +147,26 @@ higher-contrast result than looks right on its own.
 
 ---
 
-## After the files land
+## Final placement
 
-Drop the 14 files in `azan/images/`, run `node build/optimise-images.js`, and
-tell me — I will wire each one into its slot, rebuild the six pages, check the
-result at desktop and mobile in both themes, and push.
+Delivered and wired in on 4 October 2026. Where each one ended up:
+
+| Image | Slots |
+|---|---|
+| `az-corridor-road` | Home hero 2 - Land Logistics page hero |
+| `az-port-cranes` | Home hero 1 |
+| `az-yard-night` | Home hero 3 - Global Network page hero |
+| `az-bahrain` | Home hero 4 - About AZAN page hero |
+| `az-border` | Home gate 01, Land Logistics |
+| `az-jet-apron` | Home gate 02 - Executive Aviation page hero |
+| `az-roadworks` | Home corridor band - Land Logistics CTA - Corridor page hero |
+| `az-boardroom` | Structuring accordion - About CTA - Contact page hero |
+| `az-route-planning` | Coordination accordion |
+| `az-warehouse` | Execution accordion |
+| `az-control-room` | Control and reporting accordion - Global Network CTA |
+| `az-jet-boarding` | Home closing CTA band |
+| `az-jet-cabin` | Executive Aviation CTA band |
+| `az-inland-market` | Corridor page CTA band |
+
+Sources stay in `azan/images/` (git-ignored); only the WebP ships.
+To change one, drop a new file in with the same name and re-run the optimiser.
