@@ -170,3 +170,75 @@ Delivered and wired in on 4 October 2026. Where each one ended up:
 
 Sources stay in `azan/images/` (git-ignored); only the WebP ships.
 To change one, drop a new file in with the same name and re-run the optimiser.
+
+---
+
+# Round 2 — Honorato's review, 28 October 2026
+
+He rejected two images outright (red X on the Land Logistics gate and on the
+West Africa Corridor band) and asked for more life in the hero. Reading his
+reference photo closely gives a fourth, larger correction: our African shots
+are dry savannah with acacia, which reads as the Sahel or East Africa. The
+Gulf of Guinea is rainforest — green, humid, paved roads with red laterite
+verges. That is why the corridor images looked to him like logging tracks.
+
+Same filename convention, same 3:2 at 1536x1024 or larger, into `azan/images/`.
+
+## Revised style block — append to every Round 2 prompt
+
+> cinematic editorial photograph, 3:2 landscape, wide establishing shot, warm
+> late-afternoon or golden-hour daylight, rich but controlled colour, visible
+> working activity in frame, high dynamic range, natural 35mm film grain,
+> photorealistic, clean negative space in the left third for a text overlay,
+> no text, no lettering, no signage, no logos, no brand names, no watermarks
+
+Keep the Round 1 negative prompt unchanged. The two commercial rules still
+apply: no branding on any vehicle or aircraft, and no flags, border signage
+or readable plates.
+
+## Priority 1 — `az-port-working`
+*Home hero 1, replacing the lifeless night yard*
+
+> A busy container terminal in full operation at golden hour, ship-to-shore
+> gantry cranes lifting containers onto a moored vessel, straddle carriers
+> moving between stacks of red, blue and green containers, dockworkers small
+> in the distance for scale, warm low sun behind the cranes, haze and activity
+
+## Priority 2 — `az-truck-container`
+*Land Logistics gate, replacing the rejected border post*
+
+> An articulated lorry hauling a plain unmarked shipping container along a
+> paved two-lane road through dense green tropical West African vegetation,
+> red laterite verges, tall palms and rainforest canopy pressing in on both
+> sides, humid afternoon light, shot from a low angle ahead of the truck
+
+## Priority 3 — `az-corridor-green`
+*West Africa Corridor band and Corridor page hero, replacing the rejected one*
+
+> A paved trade corridor cutting through Gulf of Guinea rainforest, two
+> unmarked articulated lorries carrying shipping containers heading away from
+> camera, dense green canopy and red laterite shoulders, hills and mist in the
+> distance, warm late-afternoon light breaking through cloud
+
+## Priority 4 — `az-corridor-aerial`
+*Home hero 2 and Land Logistics page hero, replacing the savannah aerial*
+
+> Aerial drone view of a paved road winding through dense green tropical
+> rainforest in West Africa, a container lorry on the road below, red earth
+> shoulders against deep green canopy, a river glinting in the distance,
+> golden-hour light, no savannah and no acacia
+
+## Optional — `az-jet-executive`
+*Executive Aviation gate or page hero, matching his reference*
+
+> A business jet parked at a private aviation terminal at golden hour, air
+> stairs down, a black executive saloon waiting at the foot of the steps, a
+> uniformed crew member beside the aircraft, mountains soft in the background,
+> warm daylight on polished concrete, unmarked aircraft and car
+
+## Optional — `az-inland-green`
+*Corridor page CTA band, replacing the dusty savannah arrival*
+
+> An articulated lorry with a shipping container arriving on the outskirts of
+> a West African coastal city at golden hour, green hills and palms behind low
+> commercial buildings, wet tarmac from recent rain, warm humid light
